@@ -1,35 +1,36 @@
-package com.claitonamaral.bookmanager.entity;
+    package com.claitonamaral.bookmanager.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+    import com.claitonamaral.bookmanager.dto.AuthorDTO;
+    import lombok.AllArgsConstructor;
+    import lombok.Builder;
+    import lombok.Data;
+    import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+    import javax.persistence.*;
 
-@Entity
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-public class Book {
+    @Entity
+    @Data
+    @Builder
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public class Book {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    @Column(nullable = false, unique = true)
-    private String name;
-    @Column(nullable = false)
-    private String pages;
-    @Column(nullable = false)
-    private String chapters;
-    @Column(nullable = false)
-    private String isbn;
-    @Column(name = "publisher_name", nullable = false, unique = true)
-    private String publisherName;
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Long id;
+        @Column(nullable = false, unique = true)
+        private String name;
+        @Column(nullable = false)
+        private Integer pages;
+        @Column(nullable = false)
+        private Integer chapters;
+        @Column(nullable = false)
+        private String isbn;
+        @Column(name = "publisher_name", nullable = false, unique = true)
+        private String publisherName;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
-    @JoinColumn(name="author_id")
-    private Author author;
+        @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
+        @JoinColumn(name="author_id")
+        private Author author;
 
-}
+    }
