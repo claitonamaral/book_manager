@@ -1,6 +1,5 @@
     package com.claitonamaral.bookmanager.entity;
 
-    import com.claitonamaral.bookmanager.dto.AuthorDTO;
     import lombok.AllArgsConstructor;
     import lombok.Builder;
     import lombok.Data;
@@ -18,14 +17,19 @@
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
+
         @Column(nullable = false, unique = true)
-        private String name;
+        private String bookName;
+
         @Column(nullable = false)
         private Integer pages;
+
         @Column(nullable = false)
         private Integer chapters;
+
         @Column(nullable = false)
         private String isbn;
+
         @Column(name = "publisher_name", nullable = false, unique = true)
         private String publisherName;
 

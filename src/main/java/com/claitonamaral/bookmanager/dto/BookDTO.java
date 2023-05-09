@@ -1,12 +1,11 @@
 package com.claitonamaral.bookmanager.dto;
 
-import com.claitonamaral.bookmanager.entity.Author;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Column;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -22,8 +21,8 @@ public class BookDTO {
     private Long id;
 
     @NotBlank
-    @Size(max=2)
-    private String name;
+    @Size(max = 200)
+    private String bookName;
 
     @NotNull
     private Integer pages;
@@ -32,16 +31,16 @@ public class BookDTO {
     private Integer chapters;
 
     @NotBlank
-    @Size(max=100)
-    @Pattern(regexp = "(?:ISBN(?:-10)?:?)?(?=[0-9x]{10}$|(?=(?:[0-9]+[- ])))", message = "ISBN format must be a valid format")
+    @Size(max = 100)
+    @Pattern(regexp = "(?:ISBN(?:-10)?:? )?(?=[0-9X]{10}$|(?=(?:[0-9]+[- ]){3})[- 0-9X]{13}$)[0-9]{1,5}[- ]?[0-9]+[- ]?[0-9]+[- ]?[0-9X]",
+            message = "ISBN format must be a valid format")
     private String isbn;
 
     @NotBlank
-    @Size(max=200)
+    @Size(max = 200)
     private String publisherName;
 
     @Valid
     @NotNull
     private AuthorDTO author;
-
 }

@@ -1,0 +1,9 @@
+2023-05-08 09:50:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "AUTHOR" not found; SQL statement:
+insert into author (id, age, name) values (null, ?, ?) [42102-200]
+2023-05-08 09:51:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "BOOK" not found; SQL statement:
+select book0_.id as id1_1_0_, book0_.author_id as author_i7_1_0_, book0_.chapters as chapters2_1_0_, book0_.isbn as isbn3_1_0_, book0_.name as name4_1_0_, book0_.pages as pages5_1_0_, book0_.publisher_name as publishe6_1_0_ from book book0_ where book0_.id=? [42102-200]
+2023-05-08 09:59:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "AUTHOR" not found; SQL statement:
+insert into author (id, age, name) values (null, ?, ?) [42102-200]
