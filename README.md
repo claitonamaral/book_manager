@@ -44,5 +44,5 @@ Pré-requisitos para a execução do projeto desenvolvido:
 Abaixo, segue o link do projeto implantado no Railway:
 
 ```
-Será colocado aqui a URL...
+https://bookmanager-production.up.railway.app/
 ```
